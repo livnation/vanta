@@ -21,7 +21,6 @@ namespace vanta.patches
         private static class ReportInstanceInfo
         {
             static bool Prefix() => false;
-            
         }
 
         [HarmonyPatch(typeof(PlayFabClientAPI), "ReportDeviceInfo")]
