@@ -1,56 +1,50 @@
-# Liv - A Powerful Cheat Menu for Gorilla Tag
-
-**Liv** is an advanced cheat menu designed for **Gorilla Tag**, offering a variety of features to enhance your gameplay experience. Whether you're looking to explore the game in new ways or gain an advantage, **Liv** provides powerful tools that make Gorilla Tag even more fun.
-
-## Features
+# *vanta* - **open-src** cheat menu for gorilla tag
 
 
+## installation
 
-## Installation
+to install **vanta**:
 
-To install **Liv** (The **Smart** Way):
+1. clone or download the repository
+2. open the .sln file and build it
+3. launch your game (vanta will *automatically* build to plugins)
 
-1. Clone or download the repository.
-2. Open the solution and build it.
-3. Go to `C:\Users\YOUR_USERNAME\livmenu\Liv\Liv\bin\Debug`.
-4. Drag the built .DLL file into your plugins folder.
+the *simplest* way:
 
-For your average joe:
-1. Go to the latest release.
-2. Download the .DLL file.
-3. Drag the file into `C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\BepInEx\plugins`.
+1. go to the latest release
+2. download the .dll file
+3. drag the file to: `C:\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\BepInEx\plugins`.
 
+## usage
 
-## Usage
+once installed:
 
-Once installed:
+1. start-up **gorilla tag**.
+2. open **vanta** via your left controllers secondary button.
+3. use the menu and activate any cheats you want.
 
-1. Launch **Gorilla Tag**.
-2. Open **Liv** via the left primary/secondary button on your controller.
-3. Use the in-game menu to toggle and activate different cheat functions during gameplay.
+## compatability
 
-## Compatibility
+**vanta** is designed to be used on a x64 based system, windows *10* or higher. vanta is *untested* on any linux system, but may work.
 
-**Liv** is designed to work with the latest version of **Gorilla Tag**. It is compatible with the **PC VR** version of the game.
+## disclaimer
 
-## Disclaimer
+**vanta** is an *illegal* cheat menu, and violates gorilla tags code of conduct.
 
-Liv is a cheat menu, and its use violates **Gorilla Tag's Code of Conduct**. Use it at your own risk.
+**vanta** is *NOT* responsible for any bans that may occur using this menu.
 
-**Liv** is not responsible for any bans that may result in using the menu.
+## contribution
 
-## Contributing
+submit any pull requests if you believe something should be changed.
 
-Feel free to submit issues or pull requests if you have suggestions or improvements for **Liv**. Your contributions are welcome!
+## license
 
-## License
+**vanta** is licensed under the gnu [general public use] license - see the [LICENSE](LICENSE) file for details.
 
-This project is licensed under the GNU [General Public Use] License - see the [LICENSE](LICENSE) file for details.
+## contact
 
-## Contact
+if you need support, join our discord.
 
-If you have any questions or need support, feel free to reach out to the project maintainers.
-
-- [Contact](mailto:207360416+livnation@users.noreply.github.com)
-- [GitHub](https://github.com/livnation)
+- [discord](https://discord.gg/tkqmgWNc)
+- [github profile](https://github.com/livnation)
 
