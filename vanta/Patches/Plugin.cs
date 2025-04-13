@@ -9,15 +9,15 @@ using HarmonyLib;
 using System.Reflection;
 using UnityEngine;
 
-namespace Liv.Patches
+namespace vanta.Patches
 {
-    [BepInPlugin("com.liv", "Liv Cheat Menu", "1.0")]
+    [BepInPlugin("com.vanta", "vanta Cheat Menu", "1.0")]
     public class Plugin : BaseUnityPlugin
     {
         private void Awake()
         {
-            new Harmony("liv").PatchAll(Assembly.GetExecutingAssembly());
-            Debug.Log("Initialized LIV.");
+            new Harmony("vanta").PatchAll(Assembly.GetExecutingAssembly());
+            Debug.Log("Initialized vanta.");
         }
     }
 }

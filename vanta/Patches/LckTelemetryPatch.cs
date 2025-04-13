@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using HarmonyLib;
 using Liv.Lck.Telemetry;
 
-namespace Liv.Patches
+namespace vanta.Patches
 {
     [HarmonyPatch]
     internal static class LckTelemetryPatch

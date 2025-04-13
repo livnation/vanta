@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HarmonyLib;
 
-namespace Liv.Patches
+namespace vanta.Patches
 {
     static internal class PreventLocalReporting
     {

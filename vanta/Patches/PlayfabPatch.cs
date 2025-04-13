@@ -7,7 +7,7 @@ using HarmonyLib;
 using PlayFab.Internal;
 using PlayFab;
 
-namespace Liv.Patches
+namespace vanta.Patches
 {
     internal static class PlayfabPatch
     {
