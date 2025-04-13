@@ -8,16 +8,25 @@ using BepInEx.Harmony;
 using HarmonyLib;
 using System.Reflection;
 using UnityEngine;
+using vanta.miscellaneous;
+using UnityEngine.UI;
+using TMPro;
+using vanta.wrist;
 
 namespace vanta.patches
 {
-    [BepInPlugin("com.vanta", "vanta Cheat Menu", "1.0")]
+    [BepInPlugin("com.vanta", "vanta cheat menu", "1.0")]
     public class Plugin : BaseUnityPlugin
     {
-        private void Awake()
+        private void Start()
         {
-            new Harmony("vanta").PatchAll(Assembly.GetExecutingAssembly());
-            Debug.Log("Initialized vanta.");
+            new Harmony("vantacheat").PatchAll(Assembly.GetExecutingAssembly());
+            Debug.Log("init vanta.");
+            RichPresence.Init();
+            GameObject go = new GameObject("Vanta");
+            go.AddComponent<LWrist>();
+            go.AddComponent<RPCProtection>();
+            DontDestroyOnLoad(go);
         }
     }
 }

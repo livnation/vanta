@@ -13,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,12 +37,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="miscellaneous\Gradient.cs" />
+    <Compile Include="miscellaneous\RichPresence.cs" />
+    <Compile Include="miscellaneous\EasierReflection.cs" />
+    <Compile Include="miscellaneous\PlayMusicStuff.cs" />
     <Compile Include="patches\PlayfabPatch.cs" />
     <Compile Include="patches\Plugin.cs" />
     <Compile Include="patches\LckTelemetryPatch.cs" />
     <Compile Include="patches\PreventLocalReporting.cs" />
+    <Compile Include="patches\RPCProtection.cs" />
+    <Compile Include="patches\Shader.cs" />
     <Compile Include="patches\StopSpying.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="resources\wa.cs" />
+    <Compile Include="wrist\LWrist.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
@@ -313,6 +323,7 @@
     <Reference Include="SteamVR">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\SteamVR.dll</HintPath>
     </Reference>
+    <Reference Include="System" />
     <Reference Include="Unity.Animation.Rigging">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Gorilla Tag\Gorilla Tag_Data\Managed\Unity.Animation.Rigging.dll</HintPath>
     </Reference>
@@ -645,7 +656,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="miscellaneous\" />
+    <EmbeddedResource Include="resources\DiscordRPC.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+  </Target>
 </Project>
