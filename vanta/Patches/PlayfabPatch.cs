@@ -7,7 +7,7 @@ using HarmonyLib;
 using PlayFab.Internal;
 using PlayFab;
 
-namespace vanta.Patches
+namespace vanta.patches
 {
     internal static class PlayfabPatch
     {
@@ -21,6 +21,7 @@ namespace vanta.Patches
         private static class ReportInstanceInfo
         {
             static bool Prefix() => false;
+            
         }
 
         [HarmonyPatch(typeof(PlayFabClientAPI), "ReportDeviceInfo")]

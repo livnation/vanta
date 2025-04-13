@@ -35,11 +35,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Patches\PlayfabPatch.cs" />
-    <Compile Include="Patches\Plugin.cs" />
-    <Compile Include="Patches\LckTelemetryPatch.cs" />
-    <Compile Include="Patches\PreventLocalReporting.cs" />
-    <Compile Include="Patches\StopSpying.cs" />
+    <Compile Include="patches\PlayfabPatch.cs" />
+    <Compile Include="patches\Plugin.cs" />
+    <Compile Include="patches\LckTelemetryPatch.cs" />
+    <Compile Include="patches\PreventLocalReporting.cs" />
+    <Compile Include="patches\StopSpying.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -645,7 +645,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Miscellaneous\" />
+    <Folder Include="miscellaneous\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

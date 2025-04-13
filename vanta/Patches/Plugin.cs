@@ -9,7 +9,7 @@ using HarmonyLib;
 using System.Reflection;
 using UnityEngine;
 
-namespace vanta.Patches
+namespace vanta.patches
 {
     [BepInPlugin("com.vanta", "vanta Cheat Menu", "1.0")]
     public class Plugin : BaseUnityPlugin

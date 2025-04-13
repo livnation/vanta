@@ -7,7 +7,7 @@ using Backtrace.Unity.Model;
 using Backtrace.Unity.Types;
 using HarmonyLib;
 
-namespace vanta.Patches
+namespace vanta.patches
 {
     internal static class StopSpying
     {
