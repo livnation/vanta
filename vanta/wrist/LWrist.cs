@@ -12,7 +12,7 @@ namespace vanta.wrist
         private static Vector3 currentPos;
         private static Quaternion currentRot;
 
-        private const int HiddenUILayer = 30; // Use a free layer index
+        private const int HiddenUILayer = 30;
 
         static void Prefix()
         {
