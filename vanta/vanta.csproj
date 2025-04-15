@@ -49,7 +49,6 @@
     <Compile Include="patches\Shader.cs" />
     <Compile Include="patches\StopSpying.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="resources\wa.cs" />
     <Compile Include="wrist\LWrist.cs" />
     <Compile Include="wrist\LWristButtons.cs" />
   </ItemGroup>

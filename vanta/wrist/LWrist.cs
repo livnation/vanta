@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,18 +13,13 @@ namespace vanta.wrist
         private static Vector3 currentPos;
         private static Quaternion currentRot;
 
-        private const int HiddenUILayer = 30; // Use a free layer index
-
         static void Prefix()
         {
             try
             {
-                if (MenuCanvasObject == null)
-                {
-                    DrawE();
-                }
-
-                SmoothFollowCamera();
+                //l5ds add input later
+                if (MenuCanvasObject == null) DrawE();
+                Smooth();
             }
             catch (Exception e)
             {
@@ -36,52 +32,34 @@ namespace vanta.wrist
             MenuCanvasObject = new GameObject("FloatingMenuCanvas");
             var canvas = MenuCanvasObject.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.WorldSpace;
-
-            var rect = MenuCanvasObject.GetComponent<RectTransform>();
-            rect.sizeDelta = new Vector2(400, 600);
-            rect.localScale = Vector3.one * 0.0030f;
-
+            RectTransform rectum = MenuCanvasObject.GetComponent<RectTransform>();
+            rectum.sizeDelta = new Vector2(400, 600);
+            rectum.localScale = Vector3.one + new Vector3(2f, 2f, 2f) * 0.0030f;
             MenuCanvasObject.AddComponent<CanvasScaler>().dynamicPixelsPerUnit = 10;
             MenuCanvasObject.AddComponent<GraphicRaycaster>();
-
-            // Background Panel
-            GameObject panelGO = new GameObject("Background");
-            panelGO.transform.SetParent(MenuCanvasObject.transform, false);
-
-            var panelRect = panelGO.AddComponent<RectTransform>();
-            panelRect.sizeDelta = rect.sizeDelta;
-
-            var img = panelGO.AddComponent<Image>();
+            GameObject mainPanel = new GameObject("Background");
+            mainPanel.transform.SetParent(MenuCanvasObject.transform, false);
+            RectTransform panelrectum = mainPanel.AddComponent<RectTransform>();
+            panelrectum.sizeDelta = rectum.sizeDelta;
+            var img = mainPanel.AddComponent<Image>();
             img.color = new Color(0f, 0f, 0f, 0.85f);
-
-            // Assign the hidden layer recursively
-            SetLayerRecursively(MenuCanvasObject, HiddenUILayer);
-
-            // Hide from third-person recording cam
-            Camera thirdPersonCam = GameObject.Find("Player Objects/Third Person Camera/Shoulder Camera")?.GetComponent<Camera>();
-            if (thirdPersonCam != null)
-            {
-                thirdPersonCam.cullingMask &= ~(1 << HiddenUILayer);
-            }
-
-            // Initialize smooth values
+            SetLayerRecursively(MenuCanvasObject, 30);
+            Camera tpc = GameObject.Find("Player Objects/Third Person Camera/Shoulder Camera")?.GetComponent<Camera>();
+            if (tpc != null) tpc.cullingMask &= ~(1 << 30);
             currentPos = MenuCanvasObject.transform.position;
             currentRot = MenuCanvasObject.transform.rotation;
         }
 
-        static void SmoothFollowCamera()
+        static void Smooth()
         {
             if (MenuCanvasObject == null) return;
-
             Camera cam = Camera.main;
             if (cam == null) return;
-
+            // positioning is from gpt idgaf
             Vector3 targetPos = cam.transform.position + cam.transform.forward * 2.5f;
             Quaternion targetRot = Quaternion.LookRotation(targetPos - cam.transform.position);
-
             currentPos = Vector3.Lerp(currentPos, targetPos, Time.deltaTime * 5f);
             currentRot = Quaternion.Slerp(currentRot, targetRot, Time.deltaTime * 5f);
-
             MenuCanvasObject.transform.position = currentPos;
             MenuCanvasObject.transform.rotation = currentRot;
         }
@@ -89,10 +67,16 @@ namespace vanta.wrist
         static void SetLayerRecursively(GameObject obj, int newLayer)
         {
             if (obj == null) return;
-            obj.layer = newLayer;
-            foreach (Transform child in obj.transform)
+            var stack = new Stack<Transform>();
+            stack.Push(obj.transform);
+            while (stack.Count > 0)
             {
-                SetLayerRecursively(child.gameObject, newLayer);
+                var current = stack.Pop();
+                current.gameObject.layer = newLayer;
+                foreach (Transform child in current)
+                {
+                    stack.Push(child);
+                }
             }
         }
     }
