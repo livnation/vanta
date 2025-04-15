@@ -13,6 +13,11 @@ namespace vanta.wrist
         private static Vector3 currentPos;
         private static Quaternion currentRot;
 
+<<<<<<< HEAD
+=======
+        private const int HiddenUILayer = 30;
+
+>>>>>>> cf27fbe039a3ac971e6a55b8ec0720b0f9d42a4a
         static void Prefix()
         {
             try
