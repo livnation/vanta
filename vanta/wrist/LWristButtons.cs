@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vanta.resources
+namespace vanta.wrist
 {
-    internal class wa
+    internal class LWristButtons
     {
+
     }
 }
