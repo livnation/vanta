@@ -18,7 +18,6 @@ namespace vanta.patches
         void Update()
         {
             if (!PhotonNetwork.InRoom || Time.time < br) return;
-            Debug.Log("Protected");
             Prevention();
             br = Time.time + 2f;
         }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace vanta.wrist
+namespace vanta.cheats
 {
-    internal class LWristButtons
+    internal class WallWalk
     {
-
     }
 }

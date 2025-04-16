@@ -22,9 +22,8 @@ namespace vanta.patches
         {
             new Harmony("vantacheat").PatchAll(Assembly.GetExecutingAssembly());
             Debug.Log("init vanta.");
-            RichPresence.Init();
             GameObject go = new GameObject("Vanta");
-            go.AddComponent<LWrist>();
+            go.AddComponent<UI>();
             go.AddComponent<RPCProtection>();
             DontDestroyOnLoad(go);
         }
