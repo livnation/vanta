@@ -46,6 +46,7 @@
     <Compile Include="miscellaneous\EasierReflection.cs" />
     <Compile Include="miscellaneous\PlayMusicStuff.cs" />
     <Compile Include="optimization\Pooling.cs" />
+    <Compile Include="mods\Disconnect.cs" />
     <Compile Include="patches\PlayfabPatch.cs" />
     <Compile Include="patches\Plugin.cs" />
     <Compile Include="patches\LckTelemetryPatch.cs" />
