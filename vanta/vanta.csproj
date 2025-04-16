@@ -37,10 +37,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="buttons\BaseMod.cs" />
+    <Compile Include="buttons\ModManager.cs" />
     <Compile Include="miscellaneous\Gradient.cs" />
     <Compile Include="miscellaneous\RichPresence.cs" />
     <Compile Include="miscellaneous\EasierReflection.cs" />
     <Compile Include="miscellaneous\PlayMusicStuff.cs" />
+    <Compile Include="mods\Disconnect.cs" />
     <Compile Include="patches\PlayfabPatch.cs" />
     <Compile Include="patches\Plugin.cs" />
     <Compile Include="patches\LckTelemetryPatch.cs" />
